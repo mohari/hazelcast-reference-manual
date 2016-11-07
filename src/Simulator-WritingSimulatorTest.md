@@ -18,7 +18,7 @@ class MyTest extends AbstractTest{
   }
 
   @TimeStep public void inc(){
-    counter.inc();
+    counter.incrementAndGet();
   }
 }
 ```
@@ -30,6 +30,14 @@ The property file to start the test
 class=example.MyTest
 ```
 The main property that needs to be in the property file is the 'class' property which needs to point to the full classname.
+
+Timestep methods (just like the other annotated methods) need to be public (due to the code generator) and are allowed to throw checked exceptions:
+```
+  @TimeStep public void inc() throws Exception{
+    counter.incrementAndGet();
+  }
+```
+But any Throwable being thrown leads will lead to a Failure being detected.
 
 ### Adding properties
 
@@ -49,7 +57,7 @@ class MyTest extends AbstractTest{
 
   @TimeStep public void inc(BaseThreadState state){
       int counterIndex = state.randomInt(countersLength);
-      counters[counterIndex].inc();
+      counters[counterIndex].incrementAndGet();
   }
 }
 ```
@@ -85,6 +93,8 @@ class=SomeTest
 config.nestedConfig.value=10
 ```
 
+If a property is not used in a test, the test fail when starting up. The reason is that if one would make a typing error and the in reality something different is tested then you think is being tested, it is best to know this as soon as possible.
+
 ### Number of threads
 By default 10 threads are used to call the timestep methods. But in practice you want to control the number of thread. This can be done using the threadCount property.
 
@@ -114,7 +124,7 @@ class MyTest extends AbstractTest{
   }  
 
   @TimeStep(prob=-1) public void inc(){
-    counter.inc();
+    counter.incrementAndGet();
   }
 }
 ```
@@ -149,7 +159,7 @@ class MyTest extends AbstractTest{
   }
 
   @TimeStep public void inc(ThreadState state){
-    counter.inc();
+    counter.incrementAndGet();
     state.increments++;
   }
 
@@ -167,12 +177,12 @@ Another restriction is that all timestep, beforeRun and afterRun methods (of the
 class MyTest extends AbstractTest{
 
   @TimeStep public void inc(IncThreadState state){
-    counter.inc();
+    counter.incrementAndGet();
     state.increments++;
   }
 
   @TimeStep public void get(GetThreadState list){
-    counter.inc();
+    counter.get();
   }
   
   public class IncThreadState{long increments;}
@@ -186,12 +196,12 @@ It is optional for any timestep/beforeRun/afterRun method to declare this Thread
 class MyTest extends AbstractTest{
 
   @TimeStep public void inc(ThreadState state){
-    counter.inc();
+    counter.incrementAndGet();
     state.increments++;
   }
 
   @TimeStep public void get(){
-    counter.inc();
+    counter.get();
   }
 
   public class ThreadState extends BaseThreadState{
@@ -223,7 +233,7 @@ class MyTest extends AbstractTest{
   }
 
   @TimeStep public void inc(ThreadState state){
-    counter.inc();
+    counter.incrementAndGet();
     state.increments++;
   }
 
@@ -239,6 +249,9 @@ class MyTest extends AbstractTest{
 ```
 
 ### Verification
+Once a Simulator test has completed, one can do verifications. In the case of IAtomicLong.inc test, we could count the number of increments per thread and after the test completes, we can verify the total count of expected increments, but the actual number of increments.
+
+This can be done using the verify annotation:
 
 ```
 class MyTest extends AbstractTest{
@@ -252,19 +265,29 @@ class MyTest extends AbstractTest{
 
   @TimeStep public void inc(ThreadState state){
       state.increments++;
-      counter.inc();
+      counter.incrementAndGet();
   }
-
-  public class ThreadState extends BaseThreadState {
-    long increments;
+ 
+  @AfterRun public void afterRun(ThreadState state){
+     expected.addAndGet(state.increments);
   }
-
+  
   @Verify public void verify(){
     assertEquals(expected.get(), counter.get())
   }
-
+  
+  public class ThreadState extends BaseThreadState {
+    long increments;
+  }
 }
 ```
+In the above example once once the timestep-loop completes, each timestep-thread will call the afterRun method and add the actual number of increments to the 'expected' IAtomicLong. In the verify method the expected number of increments is compared with the expected number of increments.
+
+The example also shows we make use of the junit assertEquals method. So you can use junit or any else that can verify behavior. It is even fine to throw an exception.
+
+It is allowed to define zero, one or more verify methods.
+
+By default the verify will run on all workers, but it can be configured to run on a single worker using the global property on the @Verify annotatio.
 
 ### Teardown
 To automatically remove created resources, a teardown can be added. It depends on the situation if this is needed at all for your test because in most cases the workers will be terminated anyway after the Simulator test completes. But just in case you need to tear down resources, it is possible.
@@ -289,18 +312,36 @@ class MyTest extends AbstractTest{
 ```
 
 By default the teardown is executed on all participating workers, but can be influenced using the global property. 
+```
+class MyTest extends AbstractTest{
+  private IAtomicLong counter;
+
+  @Setup public void setup(){
+    counter = targetInstance.getAtomicLong("c");
+  }
+
+  @TimeStep public void inc(){
+    counter.inc();
+  }
+
+  @TearDown(global=true) public void tearDown(){
+    counter.destroy();
+  }
+}
+```
+When global is set to true, only 1 worker is going to trigger the destroy. It is allowed to define multiple tearDown methods.
 
 ### Latency testing
-Out of the box the timestep code generator emits code for tracking latencies. Latencies are tracked using HdrHistogram. Per timestep method a hdr file is created, so we can e.g. compare a Map.put with a Map.get latency from the same test. 
+Out of the box the timestep code generator emits code for tracking latencies using the excellent HdrHistogram library. Per timestep method a hdr file is created, so we can e.g. compare a Map.put with a Map.get latency from the same test. 
 
-By default the timestep threads will loop over the timestep methods as fast as they can and this is great for throughput testing and as a bonus you get an impression of the latency for that throughout. However for a propper latency test, you want to control the rate and measure the latency for that rate. Luckily using the Simulator this is very easy. 
+By default the timestep-threads will loop over the timestep methods as fast as they can and this is great for throughput testing and as a bonus you get an impression of the latency for that throughout. However for a propper latency test, you want to control the rate and measure the latency for that rate. Luckily using the Simulator this is very easy. 
 
 ```
 class=example.MyTest
 threadCount=10
 interval=10ms
 ```
-If for discussion sake we assume the MyTest has a single timestep method called 'inc',  then with the above configuration each timestep thread will make 1 inc call every 100ms. Because there are 10 threads, we get an interval per request of 10ms. The interval is configured per load generating client/member, so if there are 2 machines generating load, then globally every 5ms a call is made.
+If for discussion sake we assume the MyTest has a single timestep method called 'inc', then with the above configuration each timestep thread will make 1 inc call every 100ms. Because there are 10 threads, we get an interval per request of 10ms. The interval is configured per load generating client/member, so if there are 2 workers generating load, then globally every 5ms a call is made.
 
 Another way to configure the throughout is using the 'ratePerSecond' property.
 
@@ -309,30 +350,29 @@ class=example.MyTest
 threadCount=10
 ratePerSecond=100
 ```
-In this case each thread wil make 10 requests per second. The ratePerSecond under the hood is transformed to interval. 
+In this case each thread wil make 10 requests per second. The ratePerSecond under the hood is transformed to interval, so it is a matter of convenience which one is prefered.
 
 #### Coordinated Omission
-By default the Simulator prevents coordinated omision problems by using the expected start time of a request instead of the actual time. So instead of trying to do some kind of repair after it happened, using this approach it prevents it ever from happening. 
+By default the Simulator prevents the coordinated omision problems by using the expected start-time of a request instead of the actual time. So instead of trying to do some kind of repair after it happened, the simulator actually prevents the problem happening in the first place. Simular technique is used in JLBH http://www.rationaljava.com/2016/04/jlbh-introducing-java-latency.html.
 
-If you are interested in on the impact of coordinated omission, the protection against it can be disabled using the accountForCoordinatedOmission property
+If you are interested in on the impact of coordinated omission, the protection against it can be disabled using the:  'accountForCoordinatedOmission' property
 ```
 class=example.MyTest
 threadCount=10
 ratePerSecond=100
 accountForCoordinatedOmission=false
 ```
-Be extremely careful when setting this property to false and publishing the results.
+Be extremely careful when setting this property to false and publishing the results! Because the number will be a lot more positive than they actually are.
 
-The rate of doing requests is controlled using the Metronome abstraction. There are a few flavors available. One very interesting metronome is the ConstantCombinedRateMetronome. By default each timestep thread will wait for a given amount of time for the next request and if there is some kind of obstruction, e.g. a map.get is obstructed by an fat entry processor, a bubble of requests is build up that is processed as soon as the entry processor has completed. Instead of building up this bubble, the ConstantCombinedRateMetronome can be used. If one thread is obstructing while its wants to do a get, other timestep threads from the same execution group will continue with the requests this timestep thread was supposed to do. This way the bubble is prevented; unless all timestep threads from the same execution group are obstructed.
+The rate of doing requests is controlled using the Metronome abstraction and a few flavors are available. One very interesting metronome is the ConstantCombinedRateMetronome. By default each timestep thread-will wait for a given amount of time for the next request and if there is some kind of obstruction, e.g. a map.get is obstructed by an fat entry processor, a bubble of requests is build up that is processed as soon as the entry processor has completed. Instead of building up this bubble, the ConstantCombinedRateMetronome can be used. If one thread is obstructing while its wants to do a get, other timestep-threads from the same execution group will continue with the requests this timestep thread was supposed to do. This way the bubble is prevented; unless all timestep threads from the same execution group are obstructed.
 
 The ConstantCombinedRateMetronome can be configured using:
 ```
 class=example.MyTest
 threadCount=10
 ratePerSecond=100
-accountForCoordinatedOmission=false
+metronomeClass=com.hazelcast.simulator.worker.metronome.ConstantCombinedRateMetronome
 ```
-
 
 ### Logging
 In some cases, especially when debugging, logging is required. One easy way to add logging is to add the logging into the timestep method, but this can be inefficient and frequently is noisy. Using some magic properties logging can be enabled on any timestep based simulator test
