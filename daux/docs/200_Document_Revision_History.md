@@ -12,7 +12,8 @@ This chapter lists the changes made to this document from the previous release.
 |[Dynamically Adding Configuration on a Cluster](/500_Understanding_Configuration/450_Dynamically_Adding_Configuration_on_a_Cluster.md)|Added as a new section.
 |[User Code Deployment](/04_Setting_Up_Clusters/07_User_Code_Deployment_-_BETA.md)|Added "Example for Member Filtering Members" as a new section to explain how to use the `provider-filter` element.
 |[Client User Code Deployment](/04_Setting_Up_Clusters/07_Client_User_Code_Deployment_-_BETA.md)|Added as a new section.
-|[Lock](06_Distributed_Data_Structures/09_Lock.md)|Added "Lock vs. IMap.lock" as a new section.
+|[Lock](/06_Distributed_Data_Structures/900_Lock.md)|Added "Lock vs. IMap.lock" as a new section.
+|[Event Journal](/06_Distributed_Data_Structures/1700_Event_Journal.md)| Added as a new section to explain the event journal distributed data structure that stores the history of mutation actions on the data structures such as map or cache.
 |[Entry Processor](/08_Distributed_Computing/03_Entry_Processor)|Added the new section "Entry Processor Optimization" explaining Offloadable and Readonly entry processors.|
 |[Scoping to Join Clusters](/11_Hazelcast_JCache/05_Hazelcast_JCache_Extension-ICache/00_Scoping_to_Join_Clusters.md)|Enhanced the content to explain and give examples about the Hazelcast instance creations during cache manager starts (Hazelcast JCache).
 |[Enabling Client TLS/SSL](/14_Hazelcast_Java_Client/02_Configuring_Java_Client/00_Configuring_Client_Network.md)|Added information related to mutual authentication.
@@ -28,4 +29,5 @@ This chapter lists the changes made to this document from the previous release.
 |[Defining Member Attributes](/17_Management/03_Cluster_Utilities/05_Defining_Member_Attributes.md)|Added information related to member filtering for distributed class loading (user code deployment)
 |[Native Client Security](/18_Security/08_Native_Client_Security.md)|Added description for the Cache Permissions.|
 |[Near Cache](/19_Performance/04_Near_Cache/06_Near_Cache_Consistency.md)|Added "Locally Initiated Changes" as a new section.
+|[Defining WAN replication using Discovery SPI](/2300_WAN_Replication/100_Defining_WAN_Replication.md)| Added the new section to explain how to use WAN with endpoints on various cloud infrastructures (such as Amazon EC2) where the IP addresses are not known in advance.
 |[System Properties](/25_System_Properties.md)|Added definitions for the following new properties: <br> - hazelcast.partition.migration.fragments.enabled <br> - hazelcast.diagnostics.max.rolled.file.size.mb <br> - hazelcast.diagnostics.max.rolled.file.count
