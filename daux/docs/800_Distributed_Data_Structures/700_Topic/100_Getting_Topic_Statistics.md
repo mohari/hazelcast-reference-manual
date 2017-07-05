@@ -14,7 +14,7 @@ myTopic.getLocalTopicStats().getReceiveOperationCount();
 
 You can disable this feature with topic configuration. Please see the [Configuring Topic section](04_Configuring_Topic.md).
 
-![image](../../images/NoteSmall.jpg) ***NOTE:*** *These statistics values can be also viewed in Management Center. Please see [Monitoring Topics](/17_Management/06_Management_Center/09_Monitoring_Topics.md)*.
+![image](../../images/NoteSmall.jpg) ***NOTE:*** *These statistics values can be also viewed in Management Center. Please see [Monitoring Topics](/1900_Management/700_Management_Center/index.md)*.
 
 
 

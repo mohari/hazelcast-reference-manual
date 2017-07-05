@@ -17,5 +17,5 @@ You can trigger the force start process using the Management Center, REST API an
 
 Please note that force start is a destructive process, which results in deletion of persisted Hot Restart data.
 
-Please refer to the [Hot Restart functionality](/17_Management/06_Management_Center/18_Hot_Restart.md) of the Management Center section to learn how you can perform a force start using the Management Center.
+Please refer to the [Hot Restart functionality](/1900_Management/700_Management_Center/index.md) of the Management Center section to learn how you can perform a force start using the Management Center.
 
