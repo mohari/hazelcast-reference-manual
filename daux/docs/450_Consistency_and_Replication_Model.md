@@ -1,4 +1,4 @@
-# Consistency and Replication Model
+
 
 Partitioning and replication are the two common techniques used together in distributed databases to achieve scalable, available and transparent data distribution. The data space is divided into partitions, each of which contains a distinct portion of the overall data set. For these partitions, multiple copies called replicas are created. Partition replicas are distributed among the cluster members. Each member is assigned to at most a single replica for a partition. In this setting, different replication techniques can be used to access the data and keep the replicas in sync on updates. The technique being used directly affects the guarantees and properties the distributed data store provides, due to the CAP (**C**onsistency, **A**vailability and **P**artition Tolerance) principle.
 
