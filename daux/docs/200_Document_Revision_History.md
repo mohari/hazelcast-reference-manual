@@ -20,9 +20,7 @@ This chapter lists the changes made to this document from the previous release.
 |[Client System Properties](/1600_Hazelcast_Java_Client/600_Client_System_Properties.md)|Added client statistics related system properties definitions.
 |[Async Start and Reconnect Modes](/1600_Hazelcast_Java_Client/200_Java_Client_Overview.md#page_AsyncStartandReconnectMode.html) and [Configuring Client Connection Strategy](/1600_Hazelcast_Java_Client/300_Configuring_Java_Client/750_Configuring_Client_Connection_Strategy.md)| Added as new sections.
 |[SSL](/18_Security/04_TLS-SSL.md)|Added the new section "Authenticating Mutually".
-|[Management Center](/17_Management/06_Management_Center)|Updated by adding "Metrics-Only" privilege definition and "Enabling TLS/SSL when starting with WAR file" section.
-|[Using Management Center with TLS/SSL Only](/1900_Management/700_Management_Center/index.md)|Added as a new section.
-|[LDAP Password Encryption](/1900_Management/700_Management_Center/index.md)|Added as a new section.
+|[Management Center](/1900_Management/700_Management_Center.md)|Content has been separated from Hazelcast IMDG Reference Manual. Please see [here](http://docs.hazelcast.org/docs/management-center/3.8.3/manual/html/index.html).
 |[Validating Secrets Using Strength Policy](/2000_Security/650_Validating_Secrets_Using_Strength_Policy.md)| Added as a new section.
 |[Promoting Lite Members to Data Member](/17_Management/03_Cluster_Utilities/04_Enabling_Lite_Members.md)|Added as a new section.
 |[Using the Script cluster.sh](/17_Management/03_Cluster_Utilities/02_Using_the_Script_cluster.sh.md)|Added the explanation for the new cluster state `NO_MIGRATION`.

@@ -51,7 +51,7 @@ curl --data "${GROUPNAME}&${PASSWORD}" http://127.0.0.1:${PORT}/hazelcast/rest/m
 
 
 <br></br>
-![image](../../images/NoteSmall.jpg) ***NOTE:*** *You can also perform the above operations using the Hot Restart tab of Hazelcast Management Center or using the script `cluster.sh`. Please see the [Hot Restart section](/1900_Management/700_Management_Center/index.md) and [Using the Script cluster.sh section](02_Using_the_Script_cluster.sh.md).*
+![image](../../images/NoteSmall.jpg) ***NOTE:*** *You can also perform the above operations using the Hot Restart tab of Hazelcast Management Center or using the script `cluster.sh`. Please see the [Hot Restart section](http://docs.hazelcast.org/docs/management-center/3.8.3/manual/html/Hot_Restart.html) and [Using the Script cluster.sh section](02_Using_the_Script_cluster.sh.md).*
 <br></br>
 
 
