@@ -33,7 +33,13 @@ The phone home code itself is open source. Please see <a href="https://github.co
 
 **Disabling Phone Homes**
 
-Set the `hazelcast.phone.home.enabled` system property to false either in the config or on the Java command line. Please see the [System Properties section](../25_System_Properties.md) for information on how to set a property. 
+Set the `hazelcast.phone.home.enabled` system property to false either in the config or on the Java command line. Please see the [System Properties section](../25_System_Properties.md) for information on how to set a property.
+
+You can also disable the phone home using the environment variable `HZ_PHONE_HOME_ENABLED`. Simply add the following line to your `.bash_profile`:
+
+```
+export HZ_PHONE_HOME_ENABLED=false
+```
 
 **Phone Home URLs**
 
