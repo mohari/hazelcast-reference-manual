@@ -6,17 +6,22 @@ executions, then Embedded deployment is useful. In Embedded deployment, members 
 
 See the below illustration.
 
-![Embedded Deployment](../images/P2Pcluster.jpg)
+<img src="../images/Embedded.png" alt="Embedded Deployment" height="248" width="400">
 
 
 
 In the Client/Server deployment, Hazelcast data and services are centralized in one or more server members and they are accessed by the application through clients. 
 You can have a cluster of server members that can be independently created and scaled. Your clients communicate with
-these members to reach to Hazelcast data and services on them. Hazelcast provides native clients (Java, .NET and C++), Memcache
-clients and REST clients. 
-See the illustration at the end of this section.
+these members to reach to Hazelcast data and services on them. 
 
-![Client/Server Deployment](../images/CSCluster.jpg)
+See the below illustration.
+
+<img src="../images/ClientServer.png" alt="Client/Server Deployment" height="377" width="500">
+
+
+Hazelcast provides native clients (Java, .NET and C++), Memcache
+and REST clients, Scala, Python and Node.js client implementations.
+
 
 Client/Server deployment has advantages including more predictable and reliable Hazelcast performance, easier identification of problem causes, and most importantly, better scalability. 
 When you need to scale in this deployment type, just add more Hazelcast server members. You can address client and server scalability concerns separately.
