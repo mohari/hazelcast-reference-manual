@@ -90,6 +90,7 @@
 <p><strong>Declarative</strong>:</p>
 <pre><code class="language-xml">&lt;near-cache name=&quot;myDataStructure&quot;&gt;
   &lt;in-memory-format&gt;(OBJECT|BINARY|NATIVE)&lt;/in-memory-format&gt;
+  &lt;serialize-keys&gt;(true|false)&lt;/serialize-keys&gt;
   &lt;invalidate-on-change&gt;(true|false)&lt;/invalidate-on-change&gt;
   &lt;time-to-live-seconds&gt;(0..INT_MAX)&lt;/time-to-live-seconds&gt;
   &lt;max-idle-seconds&gt;(0..INT_MAX)&lt;/max-idle-seconds&gt;
@@ -146,6 +147,8 @@ NearCacheConfig nearCacheConfig = new NearCacheConfig()
 <code>NATIVE</code>: Data will be stored in the Near Cache that uses Hazelcast's High-Density Memory Store feature. This option is available only in Hazelcast IMDG Enterprise HD. Note that a map and its Near Cache can independently use High-Density Memory Store. For example, while your map does not use High-Density Memory Store, its Near Cache can use it.</li>
 </ul>
 </li>
+<li>
+<code>serialize-keys</code>: Specifies if the keys of a Near Cache entry should be serialized or not. Serializing the keys has a big impact on the read performance of the Near Cache. It should just be activated when you have mutable keys, which are changed after use for the Near Cache. Its default value is false.</li>
 <li>
 <code>invalidate-on-change</code>: Specifies whether the cached entries are evicted when the entries are updated or removed. Its default value is true.</li>
 <li>

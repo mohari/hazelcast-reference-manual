@@ -121,6 +121,9 @@
 <p>The phone home code itself is open source. Please see <a href="https://github.com/hazelcast/hazelcast/blob/master/hazelcast/src/main/java/com/hazelcast/util/PhoneHome.java" target="_blank">here</a>.</p>
 <p><strong>Disabling Phone Homes</strong></p>
 <p>Set the <code>hazelcast.phone.home.enabled</code> system property to false either in the config or on the Java command line. Please see the <a href="../System_Properties.html">System Properties section</a> for information on how to set a property.</p>
+<p>Starting with Hazelcast 3.9, you can also disable the phone home using the environment variable <code>HZ_PHONE_HOME_ENABLED</code>. Simply add the following line to your <code>.bash_profile</code>:</p>
+<pre><code>export HZ_PHONE_HOME_ENABLED=false
+</code></pre>
 <p><strong>Phone Home URLs</strong></p>
 <p>For versions 1.x and 2.x: <a href="http://www.hazelcast.com/version.jsp" target="_blank">http://www.hazelcast.com/version.jsp</a>.</p>
 <p>For versions 3.x up to 3.6: <a href="http://versioncheck.hazelcast.com/version.jsp" target="_blank">http://versioncheck.hazelcast.com/version.jsp</a>.</p>
