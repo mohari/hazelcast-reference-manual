@@ -22,3 +22,10 @@ Currently, Hazelcast has Java, C++ and .NET Clients as native clients. This chap
 * *For 3.6.x releases: You can use the new client with the library `hazelcast-client`. The old client's library is `hazelcast-client-legacy`, and you can still use it.*
 * *For 3.7.x and higher releases: There is no more old client for these releases. The only one is the `hazelcast-client` library, which includes clients implemented with the Hazelcast Open Binary Client Protocol.*
 
+
+#### Sample Codes for Clients
+
+
+Please refer to <a href="https://github.com/hazelcast/hazelcast-code-samples/tree/master/clients" target="_blank">Client Code Samples</a>.
+
+

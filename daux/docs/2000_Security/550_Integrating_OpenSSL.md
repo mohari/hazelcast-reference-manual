@@ -5,7 +5,7 @@
 <br></br>
 
 
-![image](images/NoteSmall.jpg) ***NOTE:*** *You cannot integrate OpenSSL into Hazelcast when [Hazelcast Encryption](03_Encryption.md) 
+![image](../images/NoteSmall.jpg) ***NOTE:*** *You cannot integrate OpenSSL into Hazelcast when [Hazelcast Encryption](03_Encryption.md) 
 is enabled.*
 
 TLS/SSL in Java is normally provided by the JRE. However, the performance overhead can be significant; even with AES intrensics
