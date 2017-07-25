@@ -30,5 +30,5 @@ SecurityConfig securityCfg = cfg.getSecurityConfig();
 securityCfg.setEnabled( true );
 ```
 
-Also, see the [Setting License Key section](/01_Getting_Started/02_Setting_The_License_Keys.md) for information on how to set your <font color="#3981DB">**Hazelcast IMDG Enterprise**</font> license.
+Also, see the [Setting License Key section](/01_Getting_Started/100_Installation.md) for information on how to set your <font color="#3981DB">**Hazelcast IMDG Enterprise**</font> license.
 

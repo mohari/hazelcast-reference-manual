@@ -1,4 +1,76 @@
 
+
+The following sections explain the installation of Hazelcast IMDG and Hazelcast IMDG Enterprise.
+
+### Installing Hazelcast IMDG
+
+You can find Hazelcast IMDG in standard Maven repositories. If your project uses Maven, you do not need to add 
+additional repositories to your `pom.xml` or add `hazelcast-<version>.jar` file into your 
+classpath (Maven does that for you). Just add the following lines to your `pom.xml`:
+
+```xml
+<dependencies>
+	<dependency>
+		<groupId>com.hazelcast</groupId>
+		<artifactId>hazelcast</artifactId>
+		<version>Hazelcast Version To Be Installed</version>
+	</dependency>
+</dependencies>
+```
+As an alternative, you can download and install Hazelcast yourself. You only need to:
+
+- Download the package `hazelcast-<version>.zip` or `hazelcast-<version>.tar.gz` from 
+<a 
+href="http://hazelcast.org/download/" target="_blank">hazelcast.org</a>.
+
+- Extract the downloaded `hazelcast-<version>.zip` or `hazelcast-<version>.tar.gz`.
+
+- Add the file `hazelcast-<version>.jar` to your classpath.
+
+### Installing Hazelcast IMDG Enterprise
+
+
+There are two Maven repositories defined for Hazelcast IMDG Enterprise:
+
+```
+<repository>
+       <id>Hazelcast Private Snapshot Repository</id>
+       <url>https://repository-hazelcast-l337.forge.cloudbees.com/snapshot/</url>
+</repository>
+<repository>
+        <id>Hazelcast Private Release Repository</id>
+        <url>https://repository-hazelcast-l337.forge.cloudbees.com/release/</url>
+</repository>
+```
+
+Hazelcast IMDG Enterprise customers may also define dependencies, a sample of which is shown below.
+
+```
+<dependency>
+     <groupId>com.hazelcast</groupId>
+     <artifactId>hazelcast-enterprise-tomcat6</artifactId>
+     <version>${project.version}</version>
+</dependency>
+<dependency>
+     <groupId>com.hazelcast</groupId>
+     <artifactId>hazelcast-enterprise-tomcat7</artifactId>
+     <version>${project.version}</version>
+</dependency>
+<dependency>
+      <groupId>com.hazelcast</groupId>
+      <artifactId>hazelcast-enterprise</artifactId>
+      <version>${project.version}</version>
+</dependency>
+<dependency>
+      <groupId>com.hazelcast</groupId>
+      <artifactId>hazelcast-enterprise-all</artifactId>
+      <version>${project.version}</version>
+</dependency>
+```
+
+### Setting the License Keys
+
+
 Hazelcast IMDG Enterprise offers you two types of licenses: **Enterprise** and **Enterprise HD**. The supported features differ in your Hazelcast setup according to the license type you own.
 
 * **Enterprise license**: In addition to the open source edition of Hazelcast, Enterprise features are the following:
@@ -76,6 +148,7 @@ As another option, you can set your license key using the below command (the "-D
 -Dhazelcast.enterprise.license.key=Your Enterprise License Key
 ```
 
-<br> </br>
+
+
 
 
