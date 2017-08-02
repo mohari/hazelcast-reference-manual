@@ -22,7 +22,7 @@ By changing the state of your cluster, you can allow/restrict several cluster op
 	- If a member leaves, it can join back. Its partition assignments (both primary and backup replicas) remain the same until either it joins back or the cluster state is changed to `ACTIVE`. When it joins back to the cluster, it will own all previous partition assignments as it was. On the other hand, when the cluster state changes to `ACTIVE`, re-partitioning starts and unassigned partition replicas are assigned to the active members.
 	- All other operations in the cluster, except migration, continue without restrictions.
 	- You cannot change the state of a cluster to `FROZEN` when migration/replication tasks are being performed.
-	- You can make use of `FROZEN` state along with the [Hot Restart Persistence](/1500_Storage/300_Hot_Restart_Persistence/index.md) feature. You can change the cluster state to `FROZEN`, then restart some of your members using the Hot Restart feature. The data on the restarting members will not be accessible but you will be able to access to the data that is stored in other members. Basically, `FROZEN` cluster state allows you do perform maintenance on your members with degrading availability partially.
+	- You can make use of `FROZEN` state along with the [Hot Restart Persistence](/1500_Storage/300_Hot_Restart_Persistence/100_Hot_Restart_Types.md) feature. You can change the cluster state to `FROZEN`, then restart some of your members using the Hot Restart feature. The data on the restarting members will not be accessible but you will be able to access to the data that is stored in other members. Basically, `FROZEN` cluster state allows you do perform maintenance on your members with degrading availability partially.
 <br></br>
 - **`PASSIVE`**:
 	- In this state, the partition table is frozen and partition assignments are not performed. 
@@ -30,7 +30,7 @@ By changing the state of your cluster, you can allow/restrict several cluster op
 	- If a member leaves while the cluster is in this state, the member will be removed from the partition table if cluster state moves back to `ACTIVE`. 
 	- This state rejects ALL operations immediately EXCEPT the read-only operations like `map.get()` and `cache.get()`, replication and cluster heartbeat tasks. 
 	- You cannot change the state of a cluster to `PASSIVE` when migration/replication tasks are being performed.
-	- You can make use of `PASSIVE` state along with the [Hot Restart Persistence](/1500_Storage/300_Hot_Restart_Persistence/index.md) feature. Please see <a href="https://github.com/hazelcast/hazelcast/blob/master/hazelcast/src/main/java/com/hazelcast/core/Cluster.java#L245" target="_blank">Cluster Shutdown API</a> for more info.
+	- You can make use of `PASSIVE` state along with the [Hot Restart Persistence](/1500_Storage/300_Hot_Restart_Persistence/100_Hot_Restart_Types.md) feature. Please see <a href="https://github.com/hazelcast/hazelcast/blob/master/hazelcast/src/main/java/com/hazelcast/core/Cluster.java#L245" target="_blank">Cluster Shutdown API</a> for more info.
 <br></br>
 - **`IN_TRANSITION`**: 
 	- This state shows that the state of the cluster is in transition. 

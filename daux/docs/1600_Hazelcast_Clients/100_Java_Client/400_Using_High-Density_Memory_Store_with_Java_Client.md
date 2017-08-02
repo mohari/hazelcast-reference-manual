@@ -4,7 +4,7 @@
 
 If you have <font color="##153F75">**Hazelcast IMDG Enterprise HD**</font>, your Hazelcast Java client's Near Cache can benefit from the High-Density Memory Store. 
 
-Let's recall the Java client's Near Cache configuration (please see the [Configuring Client Near Cache section](/14_Hazelcast_Java_Client/02_Configuring_Java_Client/_index.md)) **without** High-Density Memory Store:
+Let's recall the Java client's Near Cache configuration (please see the [Configuring Client Near Cache section](1600_Hazelcast_Clients/100_Java_Client/02_Configuration/50_Overview.md)) **without** High-Density Memory Store:
 
 ```xml
 </hazelcast-client>

@@ -107,7 +107,7 @@ The default is *smart client* mode.
 
 #### Enabling Redo Operation
 
-It enables/disables redo-able operations as described in [Handling Retry-able Operation Failure](/1600_Hazelcast_Java_Client/200_Java_Client_Overview.md#page_HandlingFailures). The following are the example configurations.
+It enables/disables redo-able operations as described in [Handling Retry-able Operation Failure](/1600_Hazelcast_Clients/100_Java_Client/200_Getting_Started.md#page_HandlingFailures). The following are the example configurations.
 
 **Declarative**:
 

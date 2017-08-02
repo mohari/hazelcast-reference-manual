@@ -15,7 +15,7 @@ To overcome this challenge, Hazelcast offers High-Density Memory Store for your 
 </map>
 ```
 
-Keep in mind that you should have already enabled the High-Density Memory Store usage for your cluster. Please see [Configuring High-Density Memory Store section](/13_Storage/00_High-Density_Memory_Store/00_Configuring_High-Density_Memory_Store.md).
+Keep in mind that you should have already enabled the High-Density Memory Store usage for your cluster. Please see [Configuring High-Density Memory Store section](/13_Storage/00_High-Density_Memory_Store.md).
 
 
 #### Required configuration changes when using NATIVE

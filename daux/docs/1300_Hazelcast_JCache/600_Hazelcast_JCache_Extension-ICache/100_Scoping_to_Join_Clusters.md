@@ -1,4 +1,14 @@
 
+Hazelcast provides extension methods to Cache API through the interface `com.hazelcast.cache.ICache`.
+
+It has two sets of extensions:
+
+* Asynchronous version of all cache operations. See [Async Operations](#icache-async-methoods).
+* Cache operations with custom `ExpiryPolicy` parameter to apply on that specific operation. See [Custom ExpiryPolicy](#defining-a-custom-expirypolicy).
+
+
+### Scoping to Join Cluster
+
 A `CacheManager`, started either as a client or as an embedded member, can be configured to start a new Hazelcast instance or reuse an already existing one to connect to a Hazelcast cluster. To achieve this, request
 a `CacheManager` by passing a `java.net.URI` instance to `CachingProvider::getCacheManager`. The `java.net.URI` instance must point to either a Hazelcast configuration or to the name of a named
 `com.hazelcast.core.HazelcastInstance` instance. In addition to the above, the same can be achieved by passing Hazelcast-specific properties to `CachingProvider::getCacheManager(URI, ClassLoader, Properties)` as detailed in the sections that follow.

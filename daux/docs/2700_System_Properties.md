@@ -77,7 +77,7 @@ Property Name | Default Value | Type | Description
 `hazelcast.mc.max.visible.slow.operations.count`|10|int|Management Center maximum visible slow operations count.
 `hazelcast.mc.url.change.enabled` | true | bool  |   Management Center changing server url is enabled.
 `hazelcast.member.list.publish.interval.seconds` | 600 | int  |   Interval at which master member publishes a member list.
-`hazelcast.memcache.enabled`| false | bool |   Enable [Memcache](/15_Other_Client_and_Language_Implementations/06_Memcache_Client.md) client request listener service.
+`hazelcast.memcache.enabled`| false | bool |   Enable [Memcache](/1600_Hazelcast_Clients/500_Memcache_Client.md) client request listener service.
 `hazelcast.merge.first.run.delay.seconds` | 300 | int |   Initial run delay of [split brain/merge process](/24_Network_Partitioning) in seconds.
 `hazelcast.merge.next.run.delay.seconds` | 120 | int |   Run interval of [split brain/merge process](/24_Network_Partitioning) in seconds.
 `hazelcast.migration.min.delay.on.member.removed.seconds`|5|int|Minimum delay (in seconds) between detection of a member that has left and start of the rebalancing process.
@@ -104,7 +104,7 @@ Property Name | Default Value | Type | Description
 `hazelcast.query.optimizer.type`|RULES|String|Type of the query optimizer. For optimizations based on static rules, set the value to `RULES`. To disable the optimization, set the value to `NONE`.
 `hazelcast.query.predicate.parallel.evaluation`|false|bool|Each Hazelcast member evaluates query predicates using a single thread by default. In most cases, the overhead of inter-thread communications overweight can benefit from parallel execution. When you have a large dataset and/or slow predicate, you may benefit from parallel predicate evaluations. Set to `true` if you are using slow predicates or have > 100,000s entries per member.
 `hazelcast.query.result.size.limit`|-1|int|Result size limit for query operations on maps. This value defines the maximum number of returned elements for a single query result. If a query exceeds this number of elements, a QueryResultSizeExceededException is thrown. Its default value is -1, meaning it is disabled.
-`hazelcast.rest.enabled` | false | bool |   Enable [REST](/15_Other_Client_and_Language_Implementations/05_REST_Client.md) client request listener service.
+`hazelcast.rest.enabled` | false | bool |   Enable [REST](/1600_Hazelcast_Clients/05_REST_Client.md) client request listener service.
 `hazelcast.shutdownhook.enabled` | true | bool  | Enable Hazelcast shutdownhook thread. When this is enabled, this thread terminates the Hazelcast instance without waiting to shutdown gracefully.
 `hazelcast.slow.operation.detector.enabled`|true|bool|Enables/disables the [Slow Operation Detector](/19_Performance/03_Slow_Operation_Detector.md).
 `hazelcast.slow.operation.detector.log.purge.interval.seconds`|300|int|Purge interval for slow operation logs.

@@ -1,4 +1,31 @@
 
+<font color="#3981DB">**Hazelcast IMDG Enterprise**</font>
+
+<br></br>
+
+
+
+There could be cases where you need to synchronize multiple Hazelcast clusters to the same state. Hazelcast WAN Replication allows you to keep multiple Hazelcast clusters in sync by replicating their state over WAN environments such as the Internet.
+
+Imagine you have different data centers in New York, London and Tokyo each running an independent Hazelcast cluster. Every cluster
+would be operating at native speed in their own LAN (Local Area Network), but you also want some or all record sets in
+these clusters to be replicated to each other: updates in the Tokyo cluster should also replicate to London and New York and updates
+in the New York cluster are to be synchronized with the Tokyo and London clusters.
+
+This chapter explains how you can replicate the state of your clusters over Wide Area Network (WAN) through Hazelcast WAN Replication.
+
+<br>
+
+***RELATED INFORMATION***
+
+*You can download the white paper **Amazon EC2 Deployment Guide** from
+<a href="https://hazelcast.com/resources/amazon-ec2-deployment-guide/" target="_blank">here</a>.*
+
+<br>
+
+## Defining WAN Replication
+
+
 Hazelcast supports two different operation modes of WAN Replication:
 
 - **Active-Passive:** This mode is mostly used for failover scenarios where you want to replicate an active cluster to one
@@ -185,7 +212,7 @@ The other properties are the same as when using the `aws` element. In case of EC
 </hazelcast>
 ```
 
-You can refer to the [aws element](/600_Setting_Up_Clusters/1100_Other_Network_Configurations.md#page_aws+element) and the [Configuring Client for AWS](/1600_Hazelcast_Java_Client/300_Configuring_Java_Client/100_Configuring_Client_Network.md#page_Configuring+Client+for+AWS) sections for the descriptions of above AWS configuration elements. Following are the definitions of additional configuration properties:
+You can refer to the [aws element](/600_Setting_Up_Clusters/1100_Other_Network_Configurations.md#page_aws+element) and the [Configuring Client for AWS](/1600_Hazelcast_Clients/100_Java_Client/300_Configuration/100_Client_Network.md#page_Configuring+Client+for+AWS) sections for the descriptions of above AWS configuration elements. Following are the definitions of additional configuration properties:
 
 - `discovery.period`: Period in seconds in which WAN tries to discover new endpoints and reestablish connections to failed endpoints. Default is 10 (seconds).
 - `maxEndpoints`: Maximum number of endpoints that WAN will connect to when using a discovery mechanism to define endpoints. Default is `Integer.MAX_VALUE`. This property has no effect when static endpoint IPs are defined using the `endpoints` property.

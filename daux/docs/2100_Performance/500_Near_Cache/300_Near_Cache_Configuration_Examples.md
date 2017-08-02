@@ -137,7 +137,7 @@ config.getMapConfig("mostlyReadMapWithHighDensityNearCache")
   .setNearCacheConfig(nearCacheConfig);
 ```
 
-Keep in mind that you should have already enabled the High-Density Memory Store usage for your cluster. Please see the [Configuring High-Density Memory Store section](/13_Storage/00_High-Density_Memory_Store/00_Configuring_High-Density_Memory_Store.md).
+Keep in mind that you should have already enabled the High-Density Memory Store usage for your cluster. Please see the [Configuring High-Density Memory Store section](/13_Storage/00_High-Density_Memory_Store.md).
 
 Note that a map and its Near Cache can independently use High-Density Memory Store. For example, if your map does not use High-Density Memory Store, its Near Cache can still use it.
 

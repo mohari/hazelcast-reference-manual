@@ -17,9 +17,9 @@ This chapter lists the changes made to this document from the previous release.
 |[Event Journal](/06_Distributed_Data_Structures/1700_Event_Journal.md)| Added as a new section to explain the event journal distributed data structure that stores the history of mutation actions on the data structures such as map or cache.
 |[Entry Processor](/08_Distributed_Computing/03_Entry_Processor)|Added the new section "Entry Processor Optimization" explaining Offloadable and Readonly entry processors.|
 |[Scoping to Join Clusters](/11_Hazelcast_JCache/05_Hazelcast_JCache_Extension-ICache/00_Scoping_to_Join_Clusters.md)|Enhanced the content to explain and give examples about the Hazelcast instance creations during cache manager starts (Hazelcast JCache).
-|[Enabling Client TLS/SSL](/14_Hazelcast_Java_Client/02_Configuring_Java_Client/00_Configuring_Client_Network.md)|Added information related to mutual authentication.
-|[Client System Properties](/1600_Hazelcast_Java_Client/600_Client_System_Properties.md)|Added client statistics related system properties definitions.
-|[Async Start and Reconnect Modes](/1600_Hazelcast_Java_Client/200_Java_Client_Overview.md#page_AsyncStartandReconnectMode.html) and [Configuring Client Connection Strategy](/1600_Hazelcast_Java_Client/300_Configuring_Java_Client/750_Configuring_Client_Connection_Strategy.md)| Added as new sections.
+|[Enabling Client TLS/SSL](/1600_Hazelcast_Clients/100_Java_Client/300_Configuration/100_Client_Network.md)|Added information related to mutual authentication.
+|[Client System Properties](/1600_Hazelcast_Clients/100_Java_Client/600_Client_System_Properties.md)|Added client statistics related system properties definitions.
+|[Async Start and Reconnect Modes](/1600_Hazelcast_Clients/100_Java_Client/200_Getting_Started.md#page_AsyncStartandReconnectMode.html) and [Configuring Client Connection Strategy](/1600_Hazelcast_Clients/100_Java_Client/300_Configuration/750_Client_Connection_Strategy.md)| Added as new sections.
 |[SSL](/18_Security/04_TLS-SSL.md)|Added the new section "Authenticating Mutually".
 |[Management Center](/1900_Management/700_Management_Center.md)|Content has been separated from Hazelcast IMDG Reference Manual. Please see [here](http://docs.hazelcast.org/docs/management-center/3.8.3/manual/html/index.html).
 |[Validating Secrets Using Strength Policy](/2000_Security/650_Validating_Secrets_Using_Strength_Policy.md)| Added as a new section.

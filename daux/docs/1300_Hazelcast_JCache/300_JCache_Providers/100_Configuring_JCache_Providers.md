@@ -1,4 +1,13 @@
 
+Use JCache providers to create caches for a specification compliant implementation. Those providers abstract the platform
+specific behavior and bindings, and provide the different JCache required features.
+
+Hazelcast has two types of providers. Depending on your application setup and the cluster topology,
+you can use the Client Provider (used by Hazelcast clients) or the Server Provider (used by cluster members).
+
+### Configuring JCache Providers
+
+
 Configure the JCache `javax.cache.spi.CachingProvider` by either specifying the provider at the command line or by declaring the provider inside the Hazelcast configuration XML file. For more information on setting properties in this XML
 configuration file, please see the [JCache Declarative Configuration section](/11_Hazelcast_JCache/01_Setup_and_Configuration/02_Configuring_for_JCache.md).
 

@@ -30,5 +30,5 @@ The following is the equivalent configuration in the Spring context.
 
 
 <br></br>
-![image](../../images/NoteSmall.jpg) ***NOTE:*** *You can also add event listeners to a Hazelcast client. Please refer to [Client Listenerconfig](/14_Hazelcast_Java_Client/02_Configuring_Java_Client/06_Configuring_Client_Listeners.md) for the related information.*
+![image](../../images/NoteSmall.jpg) ***NOTE:*** *You can also add event listeners to a Hazelcast client. Please refer to [Client Listenerconfig](/1600_Hazelcast_Clients/100_Java_Client/300_Configuration/700_Listeners.md) for the related information.*
 

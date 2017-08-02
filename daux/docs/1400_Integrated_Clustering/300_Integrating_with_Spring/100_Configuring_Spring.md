@@ -1,4 +1,12 @@
 
+
+
+You can integrate Hazelcast with Spring and this chapter explains the configuration of Hazelcast within Spring context. 
+
+Hazelcast supports Spring 2.5 and higher versions.
+
+
+
 ***Sample Code***: *Please see our <a href="https://github.com/hazelcast/hazelcast-code-samples/tree/master/hazelcast-integration/spring-configuration" target="_blank">sample application</a> for Spring Configuration.*
 <br></br>
 
