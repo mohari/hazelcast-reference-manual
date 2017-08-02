@@ -77,12 +77,11 @@
             });
         </script>
         
- //       <script>
- //       $(function(){
-//        $(".Columns__left").scrollTop($('.Nav__item--active').offset().top);
-//        $(".Columns__left").scrollTop($('.Nav__item'));
-//        });
-//        </script>
+        <script>
+        $(function(){
+        $(".Columns__left").scrollTop($('.Nav__item--active').offset().top - 100);
+        });
+        </script>
 
         
     <?php
