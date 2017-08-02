@@ -1,4 +1,14 @@
 
+
+<font color="#3981DB">**Hazelcast IMDG Enterprise**</font>
+<br></br>
+
+
+Clustered JMX via Management Center allows you to monitor clustered statistics of distributed objects from a JMX interface.
+
+### Configuring Clustered JMX
+
+
 In order to configure Clustered JMX, use the following command line parameters for your Management Center deployment.
 
 - `-Dhazelcast.mc.jmx.enabled=true` (default is false)
