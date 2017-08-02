@@ -185,7 +185,7 @@ The other properties are the same as when using the `aws` element. In case of EC
 </hazelcast>
 ```
 
-You can refer to the [aws element](/600_Setting_Up_Clusters/1100_Other_Network_Configurations.md#aws-element) and the [Configuring Client for AWS](/1600_Hazelcast_Java_Client/300_Configuring_Java_Client/100_Configuring_Client_Network.md) sections for the descriptions of above AWS configuration elements. Following are the definitions of additional configuration properties:
+You can refer to the [aws element](/600_Setting_Up_Clusters/1100_Other_Network_Configurations.md#page_aws+element) and the [Configuring Client for AWS](/1600_Hazelcast_Java_Client/300_Configuring_Java_Client/100_Configuring_Client_Network.md#page_Configuring+Client+for+AWS) sections for the descriptions of above AWS configuration elements. Following are the definitions of additional configuration properties:
 
 - `discovery.period`: Period in seconds in which WAN tries to discover new endpoints and reestablish connections to failed endpoints. Default is 10 (seconds).
 - `maxEndpoints`: Maximum number of endpoints that WAN will connect to when using a discovery mechanism to define endpoints. Default is `Integer.MAX_VALUE`. This property has no effect when static endpoint IPs are defined using the `endpoints` property.

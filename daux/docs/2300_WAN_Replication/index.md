@@ -10,12 +10,12 @@ There could be cases where you need to synchronize multiple Hazelcast clusters t
 Imagine you have different data centers in New York, London and Tokyo each running an independent Hazelcast cluster. Every cluster
 would be operating at native speed in their own LAN (Local Area Network), but you also want some or all record sets in
 these clusters to be replicated to each other: updates in the Tokyo cluster should also replicate to London and New York and updates
-in the New York cluster are to be synchronized to the Tokyo and London clusters.
+in the New York cluster are to be synchronized with the Tokyo and London clusters.
 
 This chapter explains how you can replicate the state of your clusters over Wide Area Network (WAN) through Hazelcast WAN Replication.
 
 
 ***RELATED INFORMATION***
 
-*You can download the white paper **Hazelcast on AWS: Best Practices for Deployment** from
-<a href="http://hazelcast.com/resources/hazelcast-on-aws-best-practices-for-deployment/" target="_blank">Hazelcast.com</a>.*
+*You can download the white paper **Amazon EC2 Deployment Guide** from
+<a href="https://hazelcast.com/resources/amazon-ec2-deployment-guide/" target="_blank">here</a>.*
