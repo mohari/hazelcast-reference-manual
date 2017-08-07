@@ -79,7 +79,7 @@
         
         <script>
         $(function(){
-        $(".Columns__left").scrollTop($('.Nav__item--active').offset().top - 100);
+        $(".Columns__left").scrollTop($('.Nav__item--active').offset().top - 200);
         });
         </script>
 
