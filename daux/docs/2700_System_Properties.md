@@ -5,7 +5,7 @@ The table below lists the Hazelcast system properties with their descriptions in
 
 Property Name | Default Value | Type | Description
 :--------------|:---------------|:------|:------------
-`hazelcast.application.validation.token`||string|This property can be used to verify that Hazelcast members only join when their application level configuration is the same.
+`hazelcast.application.validation.token`|n/a|string|This property can be used to verify that Hazelcast members only join when their application level configuration is the same.
 `hazelcast.backpressure.backoff.timeout.millis`|60000|int|Controls the maximum timeout in milliseconds to wait for an invocation space to be available. The value needs to be equal to or larger than 0.
 `hazelcast.backpressure.enabled`|false|bool|Enable back pressure.
 `hazelcast.backpressure.max.concurrent.invocations.per.partition`|100|int|The maximum number of concurrent invocations per partition.
@@ -13,7 +13,7 @@ Property Name | Default Value | Type | Description
 `hazelcast.cache.invalidation.batch.enabled`|true|bool|Specifies whether the cache invalidation event batch sending is enabled or not.
 `hazelcast.cache.invalidation.batch.size`|100|int|Defines the maximum number of cache invalidation events to be drained and sent to the event listeners in a batch.
 `hazelcast.cache.invalidation.batchfrequency.seconds`|5|int|Defines cache invalidation event batch sending frequency in seconds.
-`hazelcast.clientengine.thread.count`||int|Maximum number of threads to process non-partition-aware client requests, like `map.size()`, query, executor tasks, etc. Default count is 20 times number of cores.
+`hazelcast.clientengine.thread.count`|-1|int|Maximum number of threads to process non-partition-aware client requests, like `map.size()`, query, executor tasks, etc. Default count is 20 times number of cores.
 `hazelcast.client.event.queue.capacity`|1000000|string|Default value of the capacity of executor that handles incoming event packets.
 `hazelcast.client.event.thread.count`|5|string|Thread count for handling incoming event packets.
 `hazelcast.client.heartbeat.interval`|10000|string|The frequency of heartbeat messages sent by the clients to members.
@@ -53,7 +53,7 @@ Property Name | Default Value | Type | Description
 `hazelcast.io.input.thread.count` | 3 | int | Number of socket input threads.
 `hazelcast.io.output.thread.count` | 3 | int | Number of socket output threads.
 `hazelcast.io.thread.count` | 3 | int | Number of threads performing socket input and socket output. If, for example, the default value (3) is used, it means there are 3 threads performing input and 3 threads performing output (6 threads in total).
-`hazelcast.jcache.provider.type`||string|Type of the JCache provider. Values can be `client` or `server`.
+`hazelcast.jcache.provider.type`|n/a|string|Type of the JCache provider. Values can be `client` or `server`.
 `hazelcast.jmx` | false | bool  |   Enable [JMX](/17_Management/02_Monitoring_with_JMX.md) agent.
 `hazelcast.legacy.memberlist.format.enabled`  | false  |  bool  |  Enables the legacy (for the releases before Hazelcast 3.9) member list format which is printed in the logs. The new format is introduced starting with Hazelcast 3.9 and includes member list version. Any change in the cluster, such as a member leaving or joining, will increment the member list version.<br>Please see the [Starting the Member and Client section](/300_Getting_Started/600_Starting_the_Member_and_Client.md).
 `hazelcast.lock.max.lease.time.seconds`|Long.MAX_VALUE | long | All locks which are acquired without an explicit lease time use this value (in seconds) as the lease time. When you want to set an explicit lease time for your locks, you cannot set it to a longer time than this value.
@@ -68,7 +68,8 @@ Property Name | Default Value | Type | Description
 `hazelcast.map.replica.wait.seconds.for.scheduled.tasks`|10|int|Scheduler delay for map tasks those will be executed on backup members.
 `hazelcast.map.write.behind.queue.capacity`|50000|string|Maximum write-behind queue capacity per member. It is the total of all write-behind queue sizes in a member including backups. Its maximum value is `Integer.MAX_VALUE`. The value of this property is taken into account only if the `write-coalescing` element of the Map Store configuration is `false`. Please refer to the [Map Store section](/06_Distributed_Data_Structures/00_Map/05_Loading_and_Storing_Persistent_Data.md) for the description of the `write-coalescing` element.
 `hazelcast.master.confirmation.interval.seconds` | 30 | int  |   Interval at which members send master confirmation.
-`hazelcast.mastership.claim.timeout.seconds`  | 120  | int  | Timeout which defines when master candidate gives up waiting for response to its mastership claim. After timeout happens, non-responding member will be removed from the member list.`hazelcast.max.join.merge.target.seconds`|20|int|Split-brain merge timeout for a specific target.
+`hazelcast.mastership.claim.timeout.seconds`  | 120  | int  | Timeout which defines when master candidate gives up waiting for response to its mastership claim. After timeout happens, non-responding member will be removed from the member list.
+`hazelcast.max.join.merge.target.seconds`|20|int|Split-brain merge timeout for a specific target.
 `hazelcast.max.join.seconds`|300|int| Join timeout, maximum time to try to join before giving.
 `hazelcast.max.no.heartbeat.seconds` | 300 | int  |   Maximum timeout of heartbeat in seconds for a member to assume it is dead. ***CAUTION***: *Setting this value too low may cause members to be evicted from the cluster when they are under heavy load: they will be unable to send heartbeat operations in time, so other members will assume that it is dead.*
 `hazelcast.max.no.master.confirmation.seconds` | 450 | int  |   Max timeout of master confirmation from other members.
@@ -97,8 +98,8 @@ Property Name | Default Value | Type | Description
 `hazelcast.partitioning.strategy.class`|null|string|Class name implementing `com.hazelcast.core.PartitioningStrategy`, which defines key to partition mapping.
 `hazelcast.performance.monitor.max.rolled.file.count`|10|int|The PerformanceMonitor uses a rolling file approach to prevent eating too much disk space. This property sets the maximum number of rolling files to keep on disk.
 `hazelcast.performance.monitor.max.rolled.file.size.mb`|10|int|The performance monitor uses a rolling file approach to prevent eating too much disk space. This property sets the maximum size in MB for a single file. Every HazelcastInstance gets its own history of log files.
-`hazelcast.performance.monitoring.enabled`||bool|Enable the performance monitor, a tool which allows you to see internal performance metrics. These metrics are written to a dedicated log file.
-`hazelcast.performance.monitor.delay.seconds`||int| The period between successive entries in the performance monitor's log file.
+`hazelcast.performance.monitoring.enabled`|n/a|bool|Enable the performance monitor, a tool which allows you to see internal performance metrics. These metrics are written to a dedicated log file.
+`hazelcast.performance.monitor.delay.seconds`|n/a|int| The period between successive entries in the performance monitor's log file.
 `hazelcast.prefer.ipv4.stack` | true | bool  |   Prefer IPv4 network interface when picking a local address.
 `hazelcast.query.max.local.partition.limit.for.precheck`|3|int|Maximum value of local partitions to trigger local pre-check for TruePredicate query operations on maps.
 `hazelcast.query.optimizer.type`|RULES|String|Type of the query optimizer. For optimizations based on static rules, set the value to `RULES`. To disable the optimization, set the value to `NONE`.
