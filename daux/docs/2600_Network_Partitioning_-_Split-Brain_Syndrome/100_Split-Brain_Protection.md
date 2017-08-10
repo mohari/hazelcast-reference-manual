@@ -1,4 +1,4 @@
-## Split-Brain Protection
+
 
 How to respond to a split-brain scenario depends on whether consistency of data or availability of your application is of primary concern. In either case, because a split-brain scenario is caused by a network failure, you must initiate an effort to identify and correct the network failure. Your cluster cannot be brought back to steady state operation until the underlying network failure is fixed. If consistency is your primary concern, you can use Hazelcast's  Split-Brain Protection feature.
 
@@ -14,13 +14,15 @@ Split-Brain Protection is supported for the following Hazelcast data structures:
 * Lock (for Hazelcast 3.8 and higher versions)
 * Queue (for Hazelcast 3.8 and higher versions)
 
-Each data structure to be protected should have the quorum configuration added to it as explained in the Configuring Quorum section below.
+Each data structure to be protected should have the quorum configuration added to it as explained in the [Configuring Quorum section](/100_Split-Brain_Protection.md#page_Configuring+Quorum).
 
 ### Time Window for Split-Brain Protection
 
-Cluster Membership is established and maintained by heartbeats. A network partitioning will present some members as being unreachable. While configurable, it is normally seconds or tens of seconds before the cluster is adjusted to exclude unreachable members. The cluster size is based on the currently understood number of members. 
+Cluster Membership is established and maintained by heartbeats. A network partitioning will present some members as being unreachable. While configurable, it is normally seconds or tens of seconds before the cluster is adjusted to exclude unreachable members. The cluster size is based on the currently understood number of members.
 
-For this reason, there will be a time window between the network partitioning and the application of Split-Brain Protection. 
+For this reason, there will be a time window between the network partitioning and the application of Split-Brain Protection, a time window to detect quorum is not satisfied anymore. Length of this window depends on the failure detector. Given guarantee is, every member will eventually detect the failed members and will reject the operation on the data structure which requires the quorum.
+
+For more information, please see the [Consistency and Replication Model chapter](/2550_Consistency_and_Replication_Model.md).
 
 
 ### Configuring Quorum

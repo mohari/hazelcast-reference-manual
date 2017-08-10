@@ -79,8 +79,8 @@ Property Name | Default Value | Type | Description
 `hazelcast.mc.url.change.enabled` | true | bool  |   Management Center changing server url is enabled.
 `hazelcast.member.list.publish.interval.seconds` | 600 | int  |   Interval at which master member publishes a member list.
 `hazelcast.memcache.enabled`| false | bool |   Enable [Memcache](/1600_Hazelcast_Clients/500_Memcache_Client.md) client request listener service.
-`hazelcast.merge.first.run.delay.seconds` | 300 | int |   Initial run delay of [split brain/merge process](/24_Network_Partitioning) in seconds.
-`hazelcast.merge.next.run.delay.seconds` | 120 | int |   Run interval of [split brain/merge process](/24_Network_Partitioning) in seconds.
+`hazelcast.merge.first.run.delay.seconds` | 300 | int |   Initial run delay of [split brain/merge process](/2600_Network_Partitioning_-_Split-Brain_Syndrome/_index.md) in seconds.
+`hazelcast.merge.next.run.delay.seconds` | 120 | int |   Run interval of [split brain/merge process](/2600_Network_Partitioning_-_Split-Brain_Syndrome/_index.md) in seconds.
 `hazelcast.migration.min.delay.on.member.removed.seconds`|5|int|Minimum delay (in seconds) between detection of a member that has left and start of the rebalancing process.
 `hazelcast.operation.backup.timeout.millis`|5000|int|Maximum time a caller to wait for backup responses of an operation. After this timeout, operation response will be returned to the caller even no backup response is received.
 `hazelcast.operation.call.timeout.millis`| 60000 | int | Timeout to wait for a response when a remote call is sent, in milliseconds.
