@@ -59,3 +59,8 @@ The following is the Spring declarative configuration for the same sample.
 <br></br>
 ![image](../../images/NoteSmall.jpg) ***NOTE:*** *Non-primitive types to be indexed should implement *`Comparable`*.*
 
+
+#### Indexing Attributes with ValueExtractor
+
+You can also define custom attributes that may be referenced in predicates, queries and indexes. Custom attributes can be defined by implementing a `ValueExtractor`. Please see the [Indexing Custom Attributes section](/1100_Distributed_Query/300_Custom_Attributes/500_Indexing_Custom_Attributes.md) for details.
+
