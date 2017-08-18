@@ -8,7 +8,7 @@ This chapter describes the security features of Hazelcast. These features allow 
 
 
 
-## Enabling Security
+## Enabling JAAS Security
 
 With Hazelcast's extensible, JAAS based security feature, you can:
 
@@ -20,7 +20,7 @@ You can enable security declaratively or programmatically, as shown below.
 
 ```xml
 <hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config
-    http://www.hazelcast.com/schema/config/hazelcast-config-3.3.xsd"
+    http://www.hazelcast.com/schema/config/hazelcast-config-3.9.xsd"
     xmlns="http://www.hazelcast.com/schema/config"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     
