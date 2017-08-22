@@ -21,7 +21,7 @@ This chapter lists the changes made to this document from the previous release.
 |[Enabling Client TLS/SSL](/1600_Hazelcast_Clients/100_Java_Client/300_Configuration/100_Client_Network.md)|Added information related to mutual authentication.
 |[Client System Properties](/1600_Hazelcast_Clients/100_Java_Client/600_Client_System_Properties.md)|Added client statistics related system properties definitions.
 |[Async Start and Reconnect Modes](/1600_Hazelcast_Clients/100_Java_Client/200_Getting_Started.md#page_AsyncStartandReconnectMode.html) and [Configuring Client Connection Strategy](/1600_Hazelcast_Clients/100_Java_Client/300_Configuration/750_Client_Connection_Strategy.md)| Added as new sections.
-|[SSL](/18_Security/04_TLS-SSL.md)|Added the new section "Authenticating Mutually".
+|[SSL](/18_Security/04_TLS-SSL.md)|Added the new sections "Authenticating Mutually" and "TLS/SSL Debugging".
 |[Management Center](/1900_Management/700_Management_Center.md)|Content has been separated from Hazelcast IMDG Reference Manual. Please see [here](http://docs.hazelcast.org/docs/management-center/3.8.3/manual/html/index.html).
 |[Validating Secrets Using Strength Policy](/2000_Security/650_Validating_Secrets_Using_Strength_Policy.md)| Added as a new section.
 |[Promoting Lite Members to Data Member](/17_Management/03_Cluster_Utilities/04_Enabling_Lite_Members.md)|Added as a new section.
