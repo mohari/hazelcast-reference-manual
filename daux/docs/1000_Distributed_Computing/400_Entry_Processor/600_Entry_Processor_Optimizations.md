@@ -1,13 +1,24 @@
 
 
-By default the entry processor executes on a partition thread. There is exactly one thread responsible for handling
-each partition and each of such threads may handle more than one partition.
-The current design of entry processor assumes users have fast user code execution of the `process()` method.
+By default the entry processor executes on a partition thread. A partition thread is responsible for handling
+one or more partitions. The design of entry processor assumes users have fast user code execution of the `process()` method.
 In the pathological case where the code that is very heavy and executes in multi-milliseconds, this may create a bottleneck.
 
-An entry processor may implement `Offloadable` and/or `ReadOnly` interfaces in order to significantly improve the throughput.
+We have a slow user code detector which can be used to log a warning controlled by the following system properties:
 
-Currently, the optimizations apply to the following IMap methods only:
+- `hazelcast.slow.operation.detector.enabled` (default: true)
+- `hazelcast.slow.operation.detector.threshold.millis` (default: 10000)
+
+The defaults catch extremely slow operations but you should set this much lower, say to 1ms, at development time to catch entry processors that could be problematic in production. These are good candidates for our optimizations. Please see the [Slow Operation Detector section](/2100_Performance/400_Slow_Operation_Detector.md) for more information.
+
+We have two optimizations:
+
+- `Offloadable` which moves execution off the partition thread to an executor thread
+- `ReadOnly` which means we can avoid taking a lock on the key
+
+These are enabled very simply by implementing these interfaces in your `EntryProcessor`.
+
+As of 3.9, these optimizations apply to the following IMap methods only:
 
 - `executeOnKey(Object, EntryProcessor)`
 - `submitToKey(Object, EntryProcessor)`
