@@ -55,3 +55,34 @@ curl --data "${GROUPNAME}&${PASSWORD}" http://127.0.0.1:${PORT}/hazelcast/rest/m
 <br></br>
 
 
+**Querying the current cluster version:**
+
+To get the current cluster version, use the following `curl` command:
+
+```
+$ curl http://127.0.0.1:${PORT}/hazelcast/rest/management/cluster/version
+  {"status":"success","version":"3.9"}
+```
+
+<br></br>
+
+**Changing the cluster version:**
+
+To upgrade the cluster version, after having upgraded all members of your cluster to a new minor version, use the following `curl` command:
+
+```
+$ curl --data "${GROUPNAME}&${PASSWORD}&${CLUSTER_VERSION}" http://127.0.0.1:${PORT}/hazelcast/rest/management/cluster/version
+
+```
+
+For example, assuming the default group name and password, issue the following command to any member of the cluster to upgrade from cluster version 3.8 to 3.9:
+
+```
+$ curl --data "dev&dev-pass&3.9" http://127.0.0.1:5701/hazelcast/rest/management/cluster/version
+  {"status":"success","version":"3.9"}
+```
+
+<br></br>
+![image](images/NoteSmall.jpg) ***NOTE:*** *You can also perform the above cluster version operations using Hazelcast Management Center or using the script `cluster.sh`. Please see the [Rolling Member Upgrades chapter](/700_Rolling_Member_Upgrades.md) and [Using the Script cluster.sh section](02_Using_the_Script_cluster.sh.md).*
+<br></br>
+

@@ -26,6 +26,7 @@ This chapter lists the changes made to this document from the previous release.
 |[Validating Secrets Using Strength Policy](/2000_Security/650_Validating_Secrets_Using_Strength_Policy.md)| Added as a new section.
 |[Promoting Lite Members to Data Member](/17_Management/03_Cluster_Utilities/04_Enabling_Lite_Members.md)|Added as a new section.
 |[Using the Script cluster.sh](/17_Management/03_Cluster_Utilities/02_Using_the_Script_cluster.sh.md)|Added the explanation for the new cluster state `NO_MIGRATION`.
+|[Using REST API for Cluster Management](/1900_Management/400_Cluster_Utilities/400_Using_REST_API_for_Cluster_Management.md)| Added information on the `curl` commands for cluster version management.| 
 |[Defining Member Attributes](/17_Management/03_Cluster_Utilities/05_Defining_Member_Attributes.md)|Added information related to member filtering for distributed class loading (user code deployment)
 |[Diagnostics](/1900_Management/500_Diagnostics.md)| Added explanations for two new diagnostic plugins: OperationsHeartbeat and MemberHeartbeat.
 |[Native Client Security](/18_Security/08_Native_Client_Security.md)|Added description for the Cache Permissions.|
