@@ -75,7 +75,7 @@ locks are immediately available for live members.
 
 - In the split-brain scenario, the cluster behaves as if it were two different clusters. Since two separate clusters are not aware of each other,
 two members from different clusters can acquire the same lock.
-For more information on places where split brain syndrome can be handled, please see [split brain syndrome](//2600_Network_Partitioning_-_Split-Brain_Syndrome/_index.md).
+For more information on places where split brain syndrome can be handled, please see [split brain syndrome](/2600_Network_Partitioning).
 
 - Locks are not automatically removed. If a lock is not used anymore, Hazelcast will not automatically garbage collect the lock. 
 This can lead to an `OutOfMemoryError`. If you create locks on the fly, make sure they are destroyed.
@@ -143,7 +143,7 @@ try {
 
 ### Split-Brain Protection for Lock
 
-Locks can be configured to check for a minimum number of available members before applying lock operations (see [Split-Brain Protection](/2600_Network_Partitioning_-_Split-Brain_Syndrome/100_Split-Brain_Protection.md). This is a check to avoid performing successful lock operations on all parts of a cluster during a network partition. Due to the implementation details, the check does not guarantee that the lock will fail in all conditions of a network partition and it can happen that two members can acquire the same lock.
+Locks can be configured to check for a minimum number of available members before applying lock operations (see [Split-Brain Protection](/2600_Network_Partitioning/200_Split-Brain_Protection.md). This is a check to avoid performing successful lock operations on all parts of a cluster during a network partition. Due to the implementation details, the check does not guarantee that the lock will fail in all conditions of a network partition and it can happen that two members can acquire the same lock.
 
 Once the membership change has been detected, the lock operations will fail with a `QuorumException` if enough size of members are not present. In essence, this does not provide correctness but rather narrows down the window of opportunity in which locks can continue operations on several members concurrently.
 

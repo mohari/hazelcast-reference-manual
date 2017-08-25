@@ -61,7 +61,7 @@ one at version `3.9.0`, includes the following steps which should be repeated fo
  
 ## Network Partitions and Rolling Upgrades
 
-In the event of network partitions which split your cluster into two subclusters, split brain handling works as explained in the [Network Partitioning section](/2600_Network_Partitioning_-_Split-Brain_Syndrome), with the
+In the event of network partitions which split your cluster into two subclusters, split brain handling works as explained in the [Network Partitioning section](/2600_Network_Partitioning), with the
 additional constraint that two subclusters will only merge as long as they operate on the same cluster version. This is a requirement to ensure that all members participating
 in each one of the subclusters will be able to operate as members of the merged cluster at the same cluster version.
 

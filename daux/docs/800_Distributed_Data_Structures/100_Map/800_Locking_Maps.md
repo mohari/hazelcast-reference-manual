@@ -140,7 +140,7 @@ In Hazelcast, you can apply the optimistic locking strategy with the map `replac
 
 #### Lock Split-Brain Protection with Pessimistic Locking
 
-Locks can be configured to check the number of currently present members before applying a locking operation. If the check fails, the lock operation will fail with a `QuorumException` (see [Split-Brain Protection](/2600_Network_Partitioning_-_Split-Brain_Syndrome/100_Split-Brain_Protection.md)). As pessimistic locking uses lock operations internally, it will also use the configured lock quorum. This means that you can configure a lock quorum with the same name or a pattern that matches the map name. Note that the quorum for IMap locking actions can be different from the quorum for other IMap actions.  
+Locks can be configured to check the number of currently present members before applying a locking operation. If the check fails, the lock operation will fail with a `QuorumException` (see [Split-Brain Protection](/2600_Network_Partitioning)). As pessimistic locking uses lock operations internally, it will also use the configured lock quorum. This means that you can configure a lock quorum with the same name or a pattern that matches the map name. Note that the quorum for IMap locking actions can be different from the quorum for other IMap actions.  
 
 The following actions will then check for lock quorum before being applied:
  

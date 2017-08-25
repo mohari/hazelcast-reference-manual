@@ -99,7 +99,7 @@ You can set a timeout for retrying the operations sent to a member. This can be 
 - Connection between the client and member is closed.
 - Client's heartbeat requests are timed out.
 
-Please see the [Client System Properties section](/1600_Hazelcast_Clients/100_Java_Client/600_Client_System_Properties.md).
+Please see the [System Properties - Client section](/2700_System_Properties/200_System_Properties_-_Client.md).
 
 ## Using Supported Distributed Data Structures
 

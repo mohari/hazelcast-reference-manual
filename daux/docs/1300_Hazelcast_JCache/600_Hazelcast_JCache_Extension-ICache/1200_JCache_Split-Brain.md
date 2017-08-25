@@ -1,5 +1,5 @@
 
-Split-Brain handling is internally supported as a service inside Hazelcast (see [Network Partitioning](/2600_Network_Partitioning_-_Split-Brain_Syndrome/_index.md) for more details) and `JCache` uses same infrastructure with `IMap` to support Split-Brain. You can specify cache merge policy to determine which entry is used while merging. You can also provide your own cache merge policy implementations through `CacheMergePolicyInterface`.
+Split-Brain handling is internally supported as a service inside Hazelcast (see [Network Partitioning](/2600_Network_Partitioning) for more details) and `JCache` uses same infrastructure with `IMap` to support Split-Brain. You can specify cache merge policy to determine which entry is used while merging. You can also provide your own cache merge policy implementations through `CacheMergePolicyInterface`.
 
 ![image](../../images/NoteSmall.jpg) ***NOTE:*** *Split-Brain is only supported for heap-based JCache but not for HD-JCache, since merging a high volume of data in consistent way may cause significant performance loss on the system.*
 
