@@ -7,7 +7,7 @@ target/
 *.iml
 .DS_Store
 
-daux/static/
+daux/static
 
 # temporary build files
 src/images
