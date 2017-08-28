@@ -5,7 +5,7 @@ The table below lists the Hazelcast member system properties with their descript
 You can set them as property name and value pairs through declarative configuration, programmatic configuration, or JVM system property. Please see the [Configuring with System Properties section](/500_Understanding_Configuration/300_Configuring_with_System_Properties.md) to learn how to set these properties.
 
 
-![image](../images/NoteSmall.jpg)***NOTE:*** *When you want reconfigure a system property, you need to restart the members for which the property is modified.*
+![image](../images/NoteSmall.jpg)***NOTE:*** *When you want to reconfigure a system property, you need to restart the members for which the property is modified.*
 
 
 
