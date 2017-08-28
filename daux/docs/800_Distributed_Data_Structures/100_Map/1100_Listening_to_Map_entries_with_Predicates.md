@@ -1,7 +1,7 @@
 
 ### Listening to Map Entries with Predicates
 
-You can listen to the modifications performed on specific map entries. You can think of it as an entry listener with predicates. Please see the [Listening for Map Events section](/07_Distributed_Events/00_Event_Listener_for_Members/05_Listening_for_Map_Events.md) for information on how to add entry listeners to a map.
+You can listen to the modifications performed on specific map entries. You can think of it as an entry listener with predicates. Please see the [Listening for Map Events section](/07_Distributed_Events/200_Distributed_Object_Events/05_Listening_for_Map_Events.md) for information on how to add entry listeners to a map.
 
 
 ![image](../../images/NoteSmall.jpg) ***IMPORTANT:*** *The default backwards-compatible event publishing strategy only publishes

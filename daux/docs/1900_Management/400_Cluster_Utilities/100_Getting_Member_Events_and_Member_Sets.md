@@ -32,4 +32,4 @@ for ( Member member : setMembers ) {
 
 ***RELATED INFORMATION***
 
-*Please refer to the [Membership Listener section](/07_Distributed_Events/00_Event_Listener_for_Members/00_Listening_for_Member_Events.md) for more information on membership events.*
+*Please refer to the [Membership Listener section](/07_Distributed_Events/00_Cluster_Events/00_Listening_for_Member_Events.md) for more information on membership events.*

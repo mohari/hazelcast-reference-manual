@@ -44,7 +44,7 @@ After you run the first code sample, run the `PrintMember` sample. You will see 
 
 `a -> [2, 1]`
 
-Hazelcast MultiMap uses `EntryListener` to listen to events which occur when entries are added to, updated in or removed from the MultiMap. Please refer to the [Listening for MultiMap Events section](/07_Distributed_Events/00_Event_Listener_for_Members/06_Listening_for_MultiMap_Events.md) for information on how to create an entry listener class and register it.
+Hazelcast MultiMap uses `EntryListener` to listen to events which occur when entries are added to, updated in or removed from the MultiMap. Please refer to the [Listening for MultiMap Events section](/07_Distributed_Events/200_Distributed_Object_Events/06_Listening_for_MultiMap_Events.md) for information on how to create an entry listener class and register it.
 
 ### Configuring MultiMap
 

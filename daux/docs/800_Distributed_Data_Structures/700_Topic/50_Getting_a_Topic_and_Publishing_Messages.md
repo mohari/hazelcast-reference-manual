@@ -45,6 +45,6 @@ public class Sample implements MessageListener<MyEvent> {
 }
 ```
 
-Hazelcast Topic uses the `MessageListener` interface to listen for events that occur when a message is received. Please refer to the [Listening for Topic Messages section](/07_Distributed_Events/00_Event_Listener_for_Members/08_Listening_for_Topic_Messages.md) for information on how to create a message listener class and register it.
+Hazelcast Topic uses the `MessageListener` interface to listen for events that occur when a message is received. Please refer to the [Listening for Topic Messages section](/07_Distributed_Events/200_Distributed_Object_Events/08_Listening_for_Topic_Messages.md) for information on how to create a message listener class and register it.
 
 

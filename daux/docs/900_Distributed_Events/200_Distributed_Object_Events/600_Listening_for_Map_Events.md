@@ -163,7 +163,7 @@ corresponding `MapPartitionLostEvent`. If only a single member crashes in the cl
 there will be no `MapPartitionLostEvent` fired for this map since backups for the partitions 
 owned by the crashed member are kept on other members. 
 
-Please refer to [Listening for Partition Lost Events](03_Listening_for_Partition_Lost_Events.md) for more 
+Please refer to [Listening for Partition Lost Events](/900_Distributed_Events/100_Cluster_Events/03_Listening_for_Partition_Lost_Events.md) for more 
 information about partition lost detection and partition lost events.
 
 

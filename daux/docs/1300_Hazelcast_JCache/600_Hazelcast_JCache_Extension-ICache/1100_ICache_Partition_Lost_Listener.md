@@ -29,6 +29,6 @@ corresponding `CachePartitionLostEvent`. If only a single member crashes in the 
 a `CachePartitionLostEvent` is not fired for this cache since backups for the partitions
 owned by the crashed member are kept on other members.
 
-Please refer to the [Partition Lost Listener section](/07_Distributed_Events/00_Event_Listener_for_Members/03_Listening_for_Partition_Lost_Events.md) for more
+Please refer to the [Partition Lost Listener section](/07_Distributed_Events/00_Cluster_Events/03_Listening_for_Partition_Lost_Events.md) for more
 information about partition lost detection and partition lost events.
 
