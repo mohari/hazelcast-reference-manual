@@ -1,9 +1,9 @@
 
-You can configure Hazelcast Java Client declaratively (XML) or programmatically (API).
+You can configure Hazelcast Java Client declaratively (XML), programmatically (API), or using client system properties.
 
 For declarative configuration, the Hazelcast client looks at the following places for the client configuration file.
 
-- **System property**: The client first checks if `hazelcast.client.config` system property is set to a file path, e.g., `-Dhazelcast.client.config=C:/myhazelcast.xml`.
+- **System property**: The client first checks if `hazelcast.client.config` system property is set to a file path, e.g., `-Dhazelcast.client.config=C:/myhazelcast.xml`. Please refer to [System Properties - Client](2700_System_Properties/200_System_Properties_-_Client.md) for the list of client system properties.
 
 - **Classpath**: If config file is not set as a system property, the client checks the classpath for `hazelcast-client.xml` file.
 
