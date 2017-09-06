@@ -13,3 +13,5 @@ Hazelcast handles network partitions using the following solutions:
 - Split-Brain Protection (Quorums): Split-Brain Protection could be used when consistency is the major concern on a network partitioning. It requires a minimum cluster size to keep a particular data structure available. When cluster size is below the defined quorum size, then subsequent operations will be rejected with a `QuorumException`. See [Split-Brain Protection section](/100_Split-Brain_Protection.md).
 
 - Split-Brain Recovery (Merge Policies): Split-Brain Recovery is to make data structures available and operational on both sides of a network partition, and merge their data once the network partitioning problem is resolved. See [Split-Brain Recovery section](/200_Split-Brain_Recovery.md).
+
+![image](../images/NoteSmall.jpg) ***NOTE:*** *Split-Brain Recovery is not supported for the data structures whose in-memory format is `NATIVE`.*
