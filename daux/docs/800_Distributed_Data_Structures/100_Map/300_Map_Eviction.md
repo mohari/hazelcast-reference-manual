@@ -1,10 +1,4 @@
 
-![image](../../images/NoteSmall.jpg) ***NOTE:*** *Starting with Hazelcast 3.7, Hazelcast Map uses a new eviction mechanism which is based on the sampling of entries. Please see the [Eviction Algorithm section](/11_Hazelcast_JCache/05_Hazelcast_JCache_Extension-ICache/06_JCache_Eviction.md) for details.*
-
-
-
-### Evicting Map Entries
-
 Unless you delete the map entries manually or use an eviction policy, they will remain in the map. Hazelcast supports policy-based eviction for distributed maps. Currently supported policies are LRU (Least Recently Used) and LFU (Least Frequently Used).
 
 #### Understanding Map Eviction
@@ -287,3 +281,4 @@ If you Hazelcast with Spring, you can enable your policy as shown below.
 </hz:map>
 ```
 
+![image](../../images/NoteSmall.jpg) ***NOTE:*** *Starting with Hazelcast 3.7, Hazelcast Map uses a new eviction mechanism which is based on the sampling of entries. Please see the [Eviction Algorithm section](/11_Hazelcast_JCache/05_Hazelcast_JCache_Extension-ICache/06_JCache_Eviction.md) for details.*
