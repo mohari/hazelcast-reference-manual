@@ -29,6 +29,7 @@ This chapter lists the changes made to this document from the previous release.
 |[Using REST API for Cluster Management](/1900_Management/400_Cluster_Utilities/400_Using_REST_API_for_Cluster_Management.md)| Added information on the `curl` commands for cluster version management.| 
 |[Defining Member Attributes](/17_Management/03_Cluster_Utilities/05_Defining_Member_Attributes.md)|Added information related to member filtering for distributed class loading (user code deployment)
 |[Diagnostics](/1900_Management/500_Diagnostics.md)| Added explanations for two new diagnostic plugins: OperationsHeartbeat and MemberHeartbeat.
+|[Health Check and Monitoring](/1900_Management/400_Cluster_Utilities/800_Health_Check_and_Monitoring.md)|Added as a new section.
 |[Native Client Security](/18_Security/08_Native_Client_Security.md)|Added description for the Cache Permissions.|
 |[Near Cache](/19_Performance/04_Near_Cache/06_Near_Cache_Consistency.md)|Added "Locally Initiated Changes" as a new section.<br> Added the description for the newly introduced `serialize-keys` configuration element.
 |[Defining WAN replication using Discovery SPI](/2300_WAN_Replication/100_Defining_WAN_Replication.md)| Added the new section to explain how to use WAN with endpoints on various cloud infrastructures (such as Amazon EC2) where the IP addresses are not known in advance.
