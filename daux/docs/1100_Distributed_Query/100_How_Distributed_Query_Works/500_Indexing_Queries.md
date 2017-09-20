@@ -59,8 +59,12 @@ The following is the Spring declarative configuration for the same sample.
 <br></br>
 ![image](../../images/NoteSmall.jpg) ***NOTE:*** *Non-primitive types to be indexed should implement *`Comparable`*.*
 
+<br></br>
+![image](../../images/NoteSmall.jpg) ***NOTE:*** *Starting with Hazelcast 3.9, if you configure the data structure to use [High-Density Memory Store](/1500_Storage/100_High-Density_Memory_Store.md) ***and*** indexes, the indexes are automatically stored in the High-Density Memory Store as well. This prevents from running into full GCs, when doing a lot of updates to index.*
+
 
 #### Indexing Attributes with ValueExtractor
 
 You can also define custom attributes that may be referenced in predicates, queries and indexes. Custom attributes can be defined by implementing a `ValueExtractor`. Please see the [Indexing Custom Attributes section](/1100_Distributed_Query/300_Custom_Attributes/500_Indexing_Custom_Attributes.md) for details.
+
 
