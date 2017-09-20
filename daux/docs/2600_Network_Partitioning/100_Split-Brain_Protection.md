@@ -1,4 +1,5 @@
 
+![image](../images/NoteSmall.jpg) ***NOTE:*** *The term "quorum" used in this section simply refers to the count of members in the cluster. It does NOT refer to an implementation of Paxos or Raft protocols as used in some NoSQL systems.*
 
 How to respond to a split-brain scenario depends on whether consistency of data or availability of your application is of primary concern. In either case, because a split-brain scenario is caused by a network failure, you must initiate an effort to identify and correct the network failure. Your cluster cannot be brought back to steady state operation until the underlying network failure is fixed. If consistency is your primary concern, you can use Hazelcast's  Split-Brain Protection feature.
 
@@ -14,7 +15,7 @@ Split-Brain Protection is supported for the following Hazelcast data structures:
 * Lock (for Hazelcast 3.8 and higher versions)
 * Queue (for Hazelcast 3.8 and higher versions)
 
-Each data structure to be protected should have the quorum configuration added to it as explained in the [Configuring Quorum section](/100_Split-Brain_Protection.md#page_Configuring+Quorum).
+Each data structure to be protected should have the configuration added to it as explained in the [Configuring Split-Brain Protection section](/100_Split-Brain_Protection.md#page_Configuring+Split+Brain-Protection).
 
 ### Time Window for Split-Brain Protection
 
@@ -25,7 +26,7 @@ For this reason, there will be a time window between the network partitioning an
 For more information, please see the [Consistency and Replication Model chapter](/2550_Consistency_and_Replication_Model.md).
 
 
-### Configuring Quorum
+### Configuring Split-Brain Protection
 
 You can set up Split-Brain Protection Cluster Quorum using either declarative or programmatic configuration.
 
