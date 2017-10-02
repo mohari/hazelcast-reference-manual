@@ -505,10 +505,9 @@ You can add three types of event listeners.
 
 ### Configuring Client Connection Strategy
 
-You can configure the client's starting mode as async or sync using the configuration element `async-start`. When it is set to `true` (async), Hazelcast will create the client without waiting a connection to the cluster. In this case, the client instance throws an exception until it connects to the cluster. If it is `false`, the client will not be created until the cluster is ready to use clients and a connection with the cluster is established. Its default value is `false` (sync)
+You can configure the client's starting mode as async or sync using the configuration element `async-start`. When it is set to `true` (async), Hazelcast will create the client without waiting for a connection to the cluster. In this case, the client instance throws `HazelcastClientOfflineException` exception until it connects to the cluster. If `async-start` is set to `false` (default),  the client will not be created until the cluster is ready to use  and a connection with the cluster is established. This is also the default behaviour.
 
-You can also configure how the client will reconnect to the cluster after a disconnection. This is configured using the configuration element `reconnect-mode`; it has three options (`OFF`, `ON` or `ASYNC`). The option `OFF` disables the reconnection. `ON` enables reconnection in a blocking manner where all the waiting invocations will be blocked until a cluster connection is established or failed.
-The option `ASYNC` enables reconnection in a non-blocking manner where all the waiting invocations will receive a `HazelcastClientOfflineException`. Its default value is `ON`.
+Hazelcast also allows to configure how the client will reconnect to the cluster after any disconnection. This is configured using the configuration element `reconnect-mode`; it has three options (`OFF`, `ON` (default) or `ASYNC`). The option `OFF` disables any  reconnection, `ON` enables reconnection in a blocking manner such that all the waiting invocations will be blocked until a cluster connection is established or failed and  `ASYNC` enables reconnection in a non-blocking manner where all the waiting invocations will receive a `HazelcastClientOfflineException`. The default is `ON`.
 
 The example declarative and programmatic configurations below show how to configure a Java client's starting and reconnecting modes.
 
